@@ -1,0 +1,22 @@
+
+name: EC2 Self-Hosted Runner Lab
+
+on:
+  workflow_dispatch:
+
+jobs:
+  inspect-ec2:
+    runs-on: [self-hosted, linux, x64]
+
+    steps:
+      - name: Show runner hostname
+        run: hostname
+
+      - name: Show operating system
+        run: uname -a
+
+      - name: Check disk space
+        run: df -h
+
+      - name: Confirm self-hosted runner
+        run: echo "My GitHub Actions job ran on AWS EC2!"
